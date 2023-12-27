@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "base.html" %}
+
+{% block title%}
     <title>First Pages</title>
-</head>
-<body>
+{% endblock %}
+
+{% block content %}
     <h1 style="color: purple;">Tanawin ISE</h1>
     <p>This is an example paragraph.</p>
     <h2>Hello, {{name}}</h2>
@@ -15,9 +14,4 @@
     {% else %}
     <h3>you are young</h3>
     {% endif %}
-    <hr>
-    <a href="/">First pages</a>
-    <a href="/about">about</a>
-    <a href="form">form</a>
-</body>
-</html>
+{% endblock %}
