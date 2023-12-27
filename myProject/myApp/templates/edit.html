@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title%}
+    <title>Form for field data</title>
+{% endblock %}
+
+{% block content %}
+    <h1 style="color: yellow;">Tanawin ISE</h1>
+    <p>This is an example paragraph.</p>
+    <h2 class="text-center">Form for Edit Person Data</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" class="form-control" value="{{person.name}}">
+        </div>
+        <div class="form-group mb-3">
+            <label for="age">Age</label>
+            <input type="number" name="age" class="form-control" value="{{person.age}}">
+        </div>
+        <input type="submit" value="update" class="btn btn-success">
+    </form>
+    
+{% endblock %}

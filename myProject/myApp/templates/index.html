@@ -17,6 +17,14 @@
 
     <!-- {{allPerson}} -->
     <h2 class="text-center">Person Data</h2>
+    {% if messages %}
+        {% for message in messages %}
+            <!-- <strong>{{message}}</strong> -->
+            <div class="alert alert-success" role="alert">
+                <strong>{{message}}</strong>
+              </div>
+        {% endfor %}
+    {% endif %}
     <table class="table table-dark table-striped">
         <thead>
           <tr>
@@ -37,8 +45,13 @@
                 <td>{{person.age}}</td>
                 <!-- <td>@mdo</td> -->
                 <td>{{person.date}}</td>
-                <td><a href="#" class="btn btn-warning">Edit</a></td>
-                <td><a href="#" class="btn btn-danger">Delete</a></td>
+                <td><a href="edit/{{person.id}}" class="btn btn-warning">Edit</a></td>
+                <td>
+                    <a href="delete/{{person.id}}" 
+                    class="btn btn-danger"
+                    onclick="return confirm('Do you need to delete {{person.name}} ?')"
+                    >Delete</a>
+                </td>
               </tr>
             {% endfor %}
         </tbody>
