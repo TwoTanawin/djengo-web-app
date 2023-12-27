@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1 style="color: purple;">Tanawin ISE</h1>
+    <!-- <h1 style="color: purple;">Tanawin ISE</h1>
     <p>This is an example paragraph.</p>
     <h2>Hello, {{name}}</h2>
     <h2>I'm {{age}}</h2>
@@ -13,5 +13,34 @@
         <h3>your adoult</h3>
     {% else %}
     <h3>you are young</h3>
-    {% endif %}
+    {% endif %} -->
+
+    <!-- {{allPerson}} -->
+    <h2 class="text-center">Person Data</h2>
+    <table class="table table-dark table-striped">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <!-- <th scope="col">Handle</th> -->
+            <th scope="col">Date</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for person in allPerson %}
+            <tr>
+                <th scope="row">{{person.id}}</th>
+                <td>{{person.name}}</td>
+                <td>{{person.age}}</td>
+                <!-- <td>@mdo</td> -->
+                <td>{{person.date}}</td>
+                <td><a href="#" class="btn btn-warning">Edit</a></td>
+                <td><a href="#" class="btn btn-danger">Delete</a></td>
+              </tr>
+            {% endfor %}
+        </tbody>
+      </table>
 {% endblock %}
