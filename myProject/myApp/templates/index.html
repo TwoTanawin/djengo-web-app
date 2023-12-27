@@ -10,6 +10,11 @@
     <p>This is an example paragraph.</p>
     <h2>Hello, {{name}}</h2>
     <h2>I'm {{age}}</h2>
+    {% if age >= 35 %}
+        <h3>your adoult</h3>
+    {% else %}
+    <h3>you are young</h3>
+    {% endif %}
     <hr>
     <a href="/">First pages</a>
     <a href="/about">about</a>
